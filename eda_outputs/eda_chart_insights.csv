@@ -1,0 +1,77 @@
+section,chart_title,why_chosen,results,insights,result_summary
+Univariate,U1. Distribution of Transaction Amount,"A histogram is chosen to understand the spread, skewness, concentration, and possible outliers in transaction amount.","Transaction amount ranges from 31.00 to 26,633,866,936,498.00. Mean amount = 24,390,808,051.95, Median = 173,754,817.48.",The distribution helps identify whether transaction values are concentrated in a narrow band or spread widely. A strong right skew usually indicates that a small number of records contribute very large transaction values compared with the majority.,Transaction amount distribution reveals whether the platform is driven by many small transactions or a mix including very large high-value activity.
+Univariate,U2. Distribution of Transaction Count,A histogram is used to inspect the frequency distribution and concentration of transaction volume.,"Transaction count ranges from 1 to 17,419,191,808. Mean count = 16,835,842.32, Median = 102,683.00.","This chart shows whether user activity volume is balanced or concentrated. If highly skewed, a few state/district/category combinations may be dominating overall transaction traffic.",Transaction count distribution shows the operational load pattern and identifies heavy activity concentration.
+Univariate,U3. Boxplot of Transaction Amount,"A boxplot is chosen to quickly detect spread, median, quartiles, and extreme values in transaction amount.","Q1 = 857,406.00, Q3 = 4,538,170,194.83, IQR = 4,537,312,788.83, Estimated high-end outliers = 12522.","The boxplot highlights unusually large transaction amount values. These may represent peak market regions, seasonal effects, or exceptional transaction clusters that deserve separate business attention.",Outlier analysis helps identify exceptional payment hotspots and abnormal transaction behavior.
+Univariate,U4. Number of Records by Quarter,A countplot is used to verify quarter-level data coverage and temporal representation.,"Quarter-wise record distribution: {1: 17249, 2: 18629, 3: 18828, 4: 18834}",This chart checks whether records are evenly represented across quarters. Uneven distribution may indicate data incompleteness or stronger reporting concentration in particular quarters.,Quarter distribution helps validate data completeness and seasonal representation.
+Univariate,U5. Top Transaction Types by Total Amount,A horizontal bar chart is chosen for easy comparison of total transaction value across payment categories.,"Top transaction types by total amount:
+        transaction_type  transaction_amount
+                     Nan        1.102614e+15
+   Peer To Peer Payments        5.330559e+14
+       Merchant Payments        1.306800e+14
+Recharge & Bill Payments        2.667758e+13
+                  Others        3.485623e+11
+      Financial Services        2.840397e+11
+               Insurance        4.003150e+10",This chart shows which payment categories contribute the highest monetary value. These are the most commercially important transaction categories for growth and optimization.,Top payment categories reveal where most monetary throughput occurs.
+Bivariate,B1. Year vs Total Transaction Amount,A line chart is best for analyzing changes over time and identifying long-term growth trends.,"Year-wise total transaction amount:
+ year  transaction_amount
+ 2018        8.694858e+12
+ 2019        3.541450e+13
+ 2020        8.041077e+13
+ 2021        1.909175e+14
+ 2022        3.601586e+14
+ 2023        4.748796e+14
+ 2024        6.432242e+14",This trend line helps detect yearly growth or decline in PhonePe transaction value. A rising trend reflects increasing platform adoption and higher digital payment dependence.,Year-wise growth pattern shows whether transaction value is expanding steadily over time.
+Bivariate,B2. Year vs Total Transaction Count,A time-based line chart clearly shows whether transaction volume is increasing across years.,"Year-wise total transaction count:
+ year  transaction_count
+ 2018       5.764760e+09
+ 2019       2.319951e+10
+ 2020       4.401319e+10
+ 2021       1.088114e+11
+ 2022       2.254355e+11
+ 2023       3.294808e+11
+ 2024       5.014027e+11",This chart measures growth in usage volume. Comparing amount growth with count growth also helps determine whether growth is driven by more transactions or larger ticket sizes.,Transaction count trend captures user activity growth and platform usage intensity.
+Bivariate,B3. Transaction Count vs Transaction Amount,A scatter plot is chosen to examine the direct relationship between activity volume and monetary value.,"Pearson correlation between transaction count and amount = 0.7502, p-value = 0.000000",A strong positive correlation means locations or categories with higher number of transactions also tend to generate higher total value. Weak correlation would imply inconsistent ticket sizes or uneven usage behavior.,Correlation analysis shows whether transaction amount scales proportionally with transaction volume.
+Bivariate,B4. Top 10 States by Transaction Amount,A bar chart is ideal for ranking states by total transaction value.,"Top 10 states by total transaction amount:
+         state  transaction_amount
+           Nan        7.933308e+14
+     Telangana        1.266604e+14
+     Karnataka        1.188653e+14
+   Maharashtra        1.155057e+14
+Andhra Pradesh        1.006303e+14
+     Rajasthan        7.504683e+13
+ Uttar Pradesh        6.863485e+13
+Madhya Pradesh        5.314716e+13
+         Bihar        4.809956e+13
+   West Bengal        4.502904e+13","This chart identifies the leading geographic contributors by value. These states are strong candidates for premium targeting, retention programs, and advanced service offerings.",Top states reveal the strongest markets in terms of digital payment value.
+Bivariate,B5. Quarter vs Average Ticket Size,A bar chart helps compare average transaction value across the four quarters.,"Quarter-wise average ticket size:
+ quarter  avg_ticket_size
+       1      1644.748123
+       2      1577.782684
+       3      1552.196029
+       4      1659.518335","This shows whether customers spend more per transaction in specific quarters. It is useful for understanding seasonality, campaign timing, and high-value payment periods.",Quarter-wise average ticket size helps detect spending seasonality and campaign opportunities.
+Multivariate,M1. Heatmap of Transaction Amount by Year and Quarter,A heatmap is chosen to compare transaction amount across both year and quarter in a compact visual matrix.,"Year-Quarter transaction amount matrix:
+quarter             1             2             3             4
+year                                                           
+2018     9.417262e+11  1.640037e+12  2.527570e+12  3.585523e+12
+2019     5.390290e+12  7.701471e+12  9.529420e+12  1.279332e+13
+2020     1.531784e+13  1.450502e+13  2.163716e+13  2.895075e+13
+2021     3.465068e+13  4.132309e+13  5.097565e+13  6.396811e+13
+2022     7.270239e+13  8.530961e+13  9.416292e+13  1.079837e+14
+2023     1.030484e+14  1.150574e+14  1.211315e+14  1.356422e+14
+2024     1.470293e+14  1.585276e+14  1.602282e+14  1.774392e+14","The heatmap reveals seasonal peaks, weak periods, and year-quarter combinations with the highest business volume. It is excellent for pattern spotting across two time dimensions simultaneously.",Year-quarter heatmap exposes combined seasonality and long-term trend intensity.
+Multivariate,M2. Top States vs Transaction Type Heatmap,A heatmap is best for comparing many state-category intersections together.,"Top states by transaction type matrix:
+transaction_type  Financial Services     Insurance  Merchant Payments           Nan        Others  Peer To Peer Payments  Recharge & Bill Payments
+state                                                                                                                                             
+Andhra Pradesh          8.326530e+09  8.122230e+08       5.071483e+12  6.596036e+13  9.053428e+09           2.843261e+13              1.147607e+12
+Bihar                   4.946824e+09  6.710568e+08       3.197077e+12  3.019754e+13  6.712208e+09           1.421039e+13              4.822262e+11
+Karnataka               1.781580e+10  2.743155e+09       8.046395e+12  7.818385e+13  1.776008e+10           3.132246e+13              1.274294e+12
+Madhya Pradesh          7.088354e+09  7.111535e+08       3.854263e+12  3.402116e+13  9.036407e+09           1.450864e+13              7.462511e+11
+Maharashtra             1.839357e+10  2.363129e+09       8.677544e+12  7.512913e+13  2.142010e+10           2.993154e+13              1.725300e+12
+Nan                     1.420209e+11  2.001592e+10       6.534013e+13  4.477870e+14  1.742817e+11           2.665285e+14              1.333882e+13
+Rajasthan               7.985786e+09  9.596539e+08       4.863057e+12  4.870263e+13  1.156028e+10           2.042366e+13              1.036971e+12
+Telangana               1.109468e+10  1.171060e+09       6.753347e+12  8.500330e+13  1.250904e+10           3.336758e+13              1.511427e+12
+Uttar Pradesh           1.274623e+10  1.740346e+09       5.585027e+12  4.174790e+13  1.758176e+10           2.018328e+13              1.086574e+12
+West Bengal             7.380670e+09  1.052463e+09       2.808021e+12  2.944382e+13  1.015537e+10           1.219285e+13              5.657593e+11",This chart helps compare how transaction categories behave across leading states. It shows whether market leaders are driven by the same payment categories or different usage patterns.,State-category comparison reveals regional preference differences in payment behavior.
+Multivariate,M3. Time Trend by Top Transaction Types,A multi-line chart is chosen to compare category-level time trends across periods.,Time trend by top transaction types prepared for top 5 categories.,"This chart shows how leading transaction categories rise or decline over time. It is useful for identifying persistent winners, emerging categories, and volatile segments.",Multi-category time trends reveal evolving payment behavior across leading transaction types.
+Multivariate,M4. Count vs Amount by Quarter and Year,A segmented scatter plot is chosen to analyze relationship patterns while simultaneously incorporating time dimensions.,"Scatter plot created with transaction count and amount, segmented by quarter and year.",This chart shows whether the relationship between volume and value changes by quarter or year. It can reveal seasonal clustering or operational shifts in transaction behavior.,Segmented scatter analysis reveals whether time periods alter the value-volume relationship.
+Multivariate,M5. Transaction Amount by Type across Quarters,"A grouped boxplot is chosen to compare spread, median, and outliers across categories and quarters together.",Boxplot prepared for top transaction types across quarter segments.,"This compares spread and variability within each transaction type across quarters. It helps identify high-variance categories, seasonal inconsistency, and stable performers.","This view highlights category stability, seasonal fluctuation, and outlier-heavy payment segments."
